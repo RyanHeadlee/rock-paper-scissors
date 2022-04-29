@@ -9,7 +9,7 @@ let playerSelection;
 let roundResults;
 let gameLives = 3;
 let computerLives = 3;
-let keepGoing;
+let keepGoing = true;
 
 function computerPlay() {
   let computerNum = Math.floor(Math.random() * 100);
@@ -45,40 +45,29 @@ function oneRound(playerSelection, computerSelection) {
 //  play oneRound 5 times
 //  whoever wins the most wins the game
 
-// function game() {
-//   for (i = 0; i < 5; i++) {
-//     playerSelection = prompt("Rock, paper, or scissors: " + "");
-//     computerPlay();
-//     oneRound(playerSelection, computerSelection);
-//     console.log(roundResults);
-//   }
-// }
-// game();
+function game() {
+  while (keepGoing == true) {
+    if (gameLives > 0 && computerLives > 0) {
+      playerSelection = prompt("Rock, paper, or scissors: " + "");
+      computerPlay();
+      oneRound(playerSelection, computerSelection);
+      if (roundResults == "win") {
+        console.log(roundResults);
+        computerLives--;
+      } else if (roundResults == "lose") {
+        console.log(roundResults);
+        gameLives--;
+      } else if (roundResults == "tied") {
+        console.log(roundResults);
+      }
+    } else if (gameLives == 0) {
+      console.log("You Lost!");
+      keepGoing = false;
+    } else {
+      console.log("You Win");
+      keepGoing = false;
+    }
+  }
+}
 
-
-// function game() {
-//   while (keepGoing == true) {
-//     if (gameLives > 0 && computerLives > 0) {
-//       playerSelection = prompt("Rock, paper, or scissors: " + "");
-//       computerPlay();
-//       oneRound(playerSelection, computerSelection);
-//       if (roundResults == "win") {
-//         console.log(roundResults);
-//         computerLives--;
-//       } else if (roundResults == "lose") {
-//         console.log(roundResults);
-//         gameLives--;
-//       } else if (roundResults == "tied") {
-//         console.log(roundResults);
-//       }
-//     } else if (gameLives == 0) {
-//       console.log("You Lost!");
-//       keepGoing = false;
-//     } else {
-//       console.log("You Win");
-//       keepGoing = false;
-//     }
-//   }
-// }
-
-// game();
+game();
