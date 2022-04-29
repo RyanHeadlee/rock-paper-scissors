@@ -3,7 +3,7 @@
 //  if num is between x == rock 
 //  else if num is between y == scissors
 //  num is between z == paper
-
+const button = document.querySelector(".buttonPlay");
 let computerSelection;
 let playerSelection;
 let roundResults;
@@ -70,4 +70,6 @@ function game() {
   }
 }
 
-game();
+button.addEventListener("click", function() {
+  game();
+});
