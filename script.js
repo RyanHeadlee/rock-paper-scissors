@@ -1,8 +1,3 @@
-// when function is called
-//  random function to get num
-//  if num is between x == rock 
-//  else if num is between y == scissors
-//  num is between z == paper
 const button = document.querySelector(".buttonPlay");
 let computerSelection;
 let playerSelection;
@@ -10,6 +5,8 @@ let roundResults;
 let gameLives = 3;
 let computerLives = 3;
 let keepGoing = true;
+
+// This function chooses randomly between rock, paper, and scissors.
 
 function computerPlay() {
   let computerNum = Math.floor(Math.random() * 100);
@@ -23,10 +20,7 @@ function computerPlay() {
   } 
 }
 
-// when function is called
-//  take parameters and compare to see who won
-//  or who lost
-//  or tied
+// This function plays one round of rock, paper, scissors and determines a winner for the round.
 
 function oneRound(playerSelection, computerSelection) {
   if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "rock")) {
@@ -41,9 +35,7 @@ function oneRound(playerSelection, computerSelection) {
   }
 }
 
-// when called
-//  play oneRound 5 times
-//  whoever wins the most wins the game
+// This function will keep playing the round until either the player or the computer no longer has lives.
 
 function game() {
   while (keepGoing == true) {
