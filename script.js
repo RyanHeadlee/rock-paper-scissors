@@ -29,6 +29,8 @@ function oneRound(playerSelection, computerSelection) {
     return roundResults = "lose";
   } else if ((playerSelection == "rock"  && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "paper")) {
     return roundResults = "tied";
+  } else if (playerSelection == null ||playerSelection == "cancel" || playerSelection == "abort") {
+    return roundResults = "cancel";
   } else {
     alert("Insert either: Rock, Paper, or Scissors");
     return roundResults = "tied";
@@ -51,6 +53,8 @@ function game() {
         gameLives--;
       } else if (roundResults == "tied") {
         console.log(roundResults);
+      } else if (roundResults == "cancel") {
+        keepGoing = false;
       }
     } else if (gameLives == 0) {
       console.log("You Lost!");
@@ -63,5 +67,6 @@ function game() {
 }
 
 button.addEventListener("click", function() {
+  keepGoing = true;
   game();
 });
