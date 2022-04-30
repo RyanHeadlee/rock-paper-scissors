@@ -13,10 +13,22 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 10px;
 }
 
 .buttonPlay {
   border: 0;
   padding: 10px 20px 10px 20px;
   border-radius: 7px;
+  background-color: black;
+  color: aliceblue;
+}
+
+.buttonPlay:hover {
+  background-color: grey;
+  color: black;
+}
+
+.buttonPlay:active {
+  transform: translateY(2px);
 }

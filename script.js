@@ -1,4 +1,6 @@
 const button = document.querySelector(".buttonPlay");
+const para1 = document.querySelector(".gameInfo");
+const para2 = document.querySelector(".roundInfo");
 let computerSelection;
 let playerSelection;
 let roundResults;
@@ -57,10 +59,10 @@ function game() {
         keepGoing = false;
       }
     } else if (gameLives == 0) {
-      console.log("You Lost!");
+      para1.textContent = `You lose! The computer has ${computerLives} live(s) remaining! So close!`;
       keepGoing = false;
     } else {
-      console.log("You Win");
+      para1.textContent = `You Win! You had ${gameLives} live(s) remaining! So close!`;
       keepGoing = false;
     }
   }
@@ -68,5 +70,8 @@ function game() {
 
 button.addEventListener("click", function() {
   keepGoing = true;
+  gameLives = 3;
+  computerLives = 3;
+  para1.textContent = "";
   game();
 });
