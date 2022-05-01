@@ -25,11 +25,14 @@ function computerPlay() {
 // This function plays one round of rock, paper, scissors and determines a winner for the round.
 
 function oneRound(playerSelection, computerSelection) {
-  if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "paper") || (playerSelection == "paper" && computerSelection == "rock")) {
+if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSelection == "scissors" && computerSelection == "paper") 
+      || (playerSelection == "paper" && computerSelection == "rock")) {
     return roundResults = "win";
-  } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "scissors" && computerSelection == "rock") || (playerSelection == "paper" && computerSelection == "scissors")) {
+  } else if ((playerSelection == "rock" && computerSelection == "paper") || (playerSelection == "scissors" && computerSelection == "rock") 
+      || (playerSelection == "paper" && computerSelection == "scissors")) {
     return roundResults = "lose";
-  } else if ((playerSelection == "rock"  && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "scissors") || (playerSelection == "paper" && computerSelection == "paper")) {
+  } else if ((playerSelection == "rock"  && computerSelection == "rock") || (playerSelection == "scissors" && computerSelection == "scissors") 
+      || (playerSelection == "paper" && computerSelection == "paper")) {
     return roundResults = "tied";
   } else if (playerSelection == null ||playerSelection == "cancel" || playerSelection == "abort") {
     return roundResults = "cancel";
@@ -62,7 +65,7 @@ function game() {
       para1.textContent = `You lose! The computer has ${computerLives} live(s) remaining! So close!`;
       keepGoing = false;
     } else {
-      para1.textContent = `You Win! You had ${gameLives} live(s) remaining! So close!`;
+      para1.textContent = `You Win! You had ${gameLives} live(s) remaining!`;
       keepGoing = false;
     }
   }
