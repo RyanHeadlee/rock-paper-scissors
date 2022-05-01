@@ -47,7 +47,7 @@ if ((playerSelection == "rock" && computerSelection == "scissors") || (playerSel
 function game() {
   while (keepGoing == true) {
     if (gameLives > 0 && computerLives > 0) {
-      playerSelection = prompt("Rock, paper, or scissors: " + "");
+      playerSelection = prompt("Rock, paper, or scissors: " + "").toLowerCase();
       computerPlay();
       oneRound(playerSelection, computerSelection);
       if (roundResults == "win") {
