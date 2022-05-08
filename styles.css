@@ -38,13 +38,13 @@ body {
 }
 
 .loser {
-  color: red;
+  color: #E03830;
   font-size: 40px;
   font-weight: bold;
 }
 
 .winner {
-  color: green;
+  color: #079A0E;
   font-size: 40px;
   font-weight: bold;
 }
