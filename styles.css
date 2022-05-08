@@ -55,6 +55,14 @@ body {
   font-weight: bold;
 }
 
+.gameLives {
+  color: #079A0E;
+}
+
+.computerLives {
+  color: #E03830;
+}
+
 button:hover {
   background-color: grey;
 }

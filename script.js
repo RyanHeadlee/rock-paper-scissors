@@ -31,6 +31,7 @@ function playRound(playerSelection, computerSelection) {
       (playerSelection == "paper" && computerSelection == "rock")) {
     resultsContainer.appendChild(para);
     para.textContent = `You win the round; ${playerSelection} beats ${computerSelection}.`;
+    para.setAttribute("style", "color: green;");
     computerLives--;
     computerResults.textContent = `Computer Lives: ${computerLives}`;
   } else if ((playerSelection == "rock" && computerSelection == "paper") || 
@@ -38,6 +39,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection == "paper" && computerSelection == "scissors")) {
     resultsContainer.appendChild(para);
     para.textContent = `You lose the round; ${computerSelection} beats ${playerSelection}.`;
+    para.setAttribute("style", "color: red;");
     gameLives--;
     playerResults.textContent = `Your Lives: ${gameLives}`;
   } else if ((playerSelection == "rock"  && computerSelection == "rock") || 
@@ -45,6 +47,7 @@ function playRound(playerSelection, computerSelection) {
         (playerSelection == "paper" && computerSelection == "paper")) {
     resultsContainer.appendChild(para);
     para.textContent = `You tied the round; ${playerSelection} ties ${computerSelection}.`;
+    para.setAttribute("style", "color: grey;");
   }
 }
 
