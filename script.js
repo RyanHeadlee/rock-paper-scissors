@@ -1,4 +1,3 @@
-const button = document.querySelector("button");
 const para = document.createElement("p");
 const resultsContainer = document.querySelector(".resultsContainer");
 const playerResults = document.querySelector(".gameLives");
@@ -14,10 +13,10 @@ let keepGoing = true;
 
 function computerPlay() {
   let computerNum = Math.floor(Math.random() * 100);
-  
+
   if (computerNum >= 0 && computerNum <= 33) {
     return computerSelection = "rock";
-  } else if (computerNum >= 34 && computerNum <= 66){
+  } else if (computerNum >= 34 && computerNum <= 67){
     return computerSelection = "scissors";
   } else {
     return computerSelection = "paper";
@@ -27,7 +26,7 @@ function computerPlay() {
 // This function plays one round of rock, paper, scissors and determines a winner for the round.
 
 function playRound(playerSelection, computerSelection) {
-if ((playerSelection == "rock" && computerSelection == "scissors") ||
+  if ((playerSelection == "rock" && computerSelection == "scissors") ||
       (playerSelection == "scissors" && computerSelection == "paper") ||
       (playerSelection == "paper" && computerSelection == "rock")) {
     resultsContainer.appendChild(para);
@@ -77,6 +76,7 @@ rock.addEventListener('click', () => {
     checkLives();
   }
 });
+
 const paper = document.querySelector('.paper');
 paper.addEventListener('click', () => {
   checkLives();
@@ -87,6 +87,7 @@ paper.addEventListener('click', () => {
     checkLives();
   }
 });
+
 const scissors = document.querySelector('.scissors');
 scissors.addEventListener('click', () => {
   checkLives();
@@ -104,7 +105,7 @@ reset.addEventListener('click', () => {
   para.classList.remove('winner', 'loser');
   gameLives = 3;
   computerLives = 3;
-  computerResults.textContent = "Your Lives: 3";
+  computerResults.textContent = "Computer Lives: 3";
   playerResults.textContent = "Your Lives: 3";
-  para.textContent = "";
+  para.remove();
 });
