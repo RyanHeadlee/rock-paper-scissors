@@ -16,19 +16,34 @@ body {
   gap: 10px;
 }
 
-.buttonPlay {
+.buttonContainer {
+  display: flex;
+  gap: 2em;
+}
+
+.buttonContainer button {
   border: 0;
-  padding: 10px 20px 10px 20px;
-  border-radius: 7px;
+  color: white;
   background-color: black;
-  color: aliceblue;
+  padding: 0.7em 1.8em;
+  border-radius: 7px;
 }
 
-.buttonPlay:hover {
-  background-color: grey;
-  color: black;
+.livesContainer {
+  display: flex;
+  gap: 10em;
+  justify-content: center;
+  align-items: center;
 }
 
-.buttonPlay:active {
-  transform: translateY(2px);
+.loser {
+  color: red;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.winner {
+  color: green;
+  font-size: 40px;
+  font-weight: bold;
 }
